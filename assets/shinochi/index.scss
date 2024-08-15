@@ -1,0 +1,112 @@
+// variables
+@import 'variables';
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: $cream;
+}
+
+@mixin frau-font-cart($color) {
+    font-family: 'Fraunces', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: $color;
+}
+
+@mixin mon-font-cart() {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: $dark-grayish-blue;
+    @content;
+}
+
+.container-cart {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 80%;
+
+    .img-desktop {
+        flex-grow: 1;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .cart-content {
+        flex-grow: 1;
+        padding: 25px;
+        padding-right: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        background-color: $white;
+        border-radius: 0 10px 10px 0;
+
+        .cart-content__header {
+            @include mon-font-cart() {
+                letter-spacing: 0.4rem;
+            };
+        }
+
+        .cart-content__title {
+            @include frau-font-cart($very-dark-blue);
+        }
+
+        .cart-content__description {
+            @include mon-font-cart() {
+                line-height: 1.6rem;
+                flex-shrink: 5;
+            };
+        }
+
+        .cart-content__price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+
+            h3 {
+                @include frau-font-cart($dark-cyan);
+            }
+
+            h5 {
+                @include mon-font-cart();
+                text-decoration: line-through;
+            }
+        }
+
+        .cart-content___add-to-cart {
+            padding: 15px 50px;
+            background-color: $dark-cyan;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+    
+            i {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+    
+            h5 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                color: $white;
+                font-size: 1rem;
+            }
+    
+            &:hover {
+                background-color: mix( black ,$dark-cyan, 40%);
+            }
+        }
+    }
+
+    
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- Montserrat font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  
+
+  <!-- Fraunces font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- CSS -->  
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/gird.css">
+
+</head>
+<body>
+  <main>
+    <div class="gird" style="height: 100%;">
+      <div class="row">
+        <div class="c-o-3 f-o-2-5 s-o-2 t-o-1-5 m-o-1-5 sm-o-1-5"></div>
+        <div class="c-6 f-7 s-8 t-9 m-11 sm-11">
+          <div class="container-cart">
+            <img src="./images/image-product-desktop.jpg" alt="" class="img-desktop">
+            <img src="./images/image-product-mobile.jpg" alt="" class="img-mobile display-none" >
+            <div class="cart-content">
+              <h4 class="cart-content__header">PERFUME</h4>
+              <h3 class="cart-content__title">Gabrielle Essence Eau De Parfum</h3>
+              <p class="cart-content__description">A floral, solar and voluptutous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL</p>
+              <div class="cart-content__price">
+                <h3 class="cart-content__price-current">$149.99</h3>
+                <h5 class="cart-content__price-old">$169.99</h5>
+              </div>
+              <button class="cart-content___add-to-cart">
+                <i style="background-image: url('./images/icon-cart.svg');"></i>
+                <h5>Add to Cart</h5>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

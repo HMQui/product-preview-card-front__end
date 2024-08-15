@@ -1,0 +1,134 @@
+// library
+@use 'sass:math';
+
+// grid
+.grid {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    max-width: 1444px;
+    height: 100%;
+}
+
+// row
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flex($type) {
+    @for $i from 1 through 12 {
+        $value: math.div($i, 12) * 100%;
+
+        .#{$type}-#{$i} {
+            flex: 0 0 $value;
+            max-width: $value;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .#{$type}-o-#{$i} {
+            margin-left: $value;
+        }
+    }
+}
+
+// desktop
+@include flex(c);
+
+// breakpoint1
+@media (min-width: 74.75rem) and (max-width: 87.5rem) {
+    @include flex(f);
+    .f-o-2-5 {
+        margin-left: 20.83333333%;
+    }
+}
+
+// breakpoint2
+@media (min-width: 65.5rem) and (max-width: 74.74rem) {
+    @include flex(s);
+}
+
+// breakpoint3
+@media (min-width: 58.125rem) and (max-width: 65.49rem) {
+    @include flex(t);
+    .t-o-1-5 {
+        margin-left: 12.5%;
+    }
+}
+
+// mobile
+@media (min-width: 31.25rem) and (max-width: 58.124rem) {
+    @include flex(m);
+    .m-o-1-5 {
+        margin-left: 4.16666666%;
+    }
+
+    .container-cart {
+        flex-direction: column;
+        height: 80%;
+
+        .img-desktop {
+            display: none;
+        }
+
+        .img-mobile {
+            display: block;
+            border-radius: 5px 5px 0 0;
+            // flex-grow: 3;
+        }
+
+        .cart-content {
+            // flex-grow: 7;
+            height: 60%;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}
+
+// small mobile
+@media (min-width: 22.5rem) and (max-width: 31.24rem) {
+    @include flex(sm);
+    .sm-o-1-5 {
+        margin-left: 4.16666666%;
+    }
+
+    .container-cart {
+        flex-direction: column;
+        height: 80%;
+
+        .img-desktop {
+            display: none;
+        }
+
+        .img-mobile {
+            display: block;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .cart-content {
+            height: 60%;
+            border-radius: 0 0 5px 5px;
+            padding-top: 25px;
+            // gap: 8px;
+
+            .cart-content__header {
+                font-size: 0.8rem;
+            }
+
+            .cart-content__title {
+                font-size: 2rem;
+            }
+
+            .cart-content__price {
+                .cart-content__price-current {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
